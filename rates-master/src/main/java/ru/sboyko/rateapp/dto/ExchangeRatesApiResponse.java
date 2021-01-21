@@ -1,4 +1,4 @@
-package ru.narryel.rateapp.dto;
+package ru.sboyko.rateapp.dto;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

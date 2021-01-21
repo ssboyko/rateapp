@@ -1,18 +1,15 @@
-package ru.narryel.rateapp.service;
+package ru.sboyko.rateapp.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.val;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.narryel.rateapp.dto.ExchangeRatesApiResponse;
+import ru.sboyko.rateapp.dto.ExchangeRatesApiResponse;
 
-import javax.websocket.server.PathParam;
 import java.net.URI;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 @Service
 @RequiredArgsConstructor

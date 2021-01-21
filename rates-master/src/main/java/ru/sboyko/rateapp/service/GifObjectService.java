@@ -1,11 +1,10 @@
-package ru.narryel.rateapp.service;
+package ru.sboyko.rateapp.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.narryel.rateapp.dto.ExchangeRatesApiResponse;
-import ru.narryel.rateapp.dto.GifObjectApiResponse;
+import ru.sboyko.rateapp.dto.GifObjectApiResponse;
 
 import java.awt.*;
 import java.net.URI;

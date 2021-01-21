@@ -1,4 +1,4 @@
-package ru.narryel.rateapp.controller;
+package ru.sboyko.rateapp.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.val;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.narryel.rateapp.service.GifObjectService;
-import ru.narryel.rateapp.service.RateService;
+import ru.sboyko.rateapp.service.GifObjectService;
+import ru.sboyko.rateapp.service.RateService;
 
 import java.awt.*;
 import java.net.URISyntaxException;

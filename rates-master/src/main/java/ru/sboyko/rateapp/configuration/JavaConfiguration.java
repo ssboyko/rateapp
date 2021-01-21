@@ -1,4 +1,4 @@
-package ru.narryel.rateapp.configuration;
+package ru.sboyko.rateapp.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

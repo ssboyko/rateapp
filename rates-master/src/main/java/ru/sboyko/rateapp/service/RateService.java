@@ -20,7 +20,7 @@ public class RateService {
     public static final String yesterday = LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
     private final RestTemplate restTemplate;
-    //private final RestTemplate restTemplate2;
+
 
 
 
@@ -49,6 +49,9 @@ public class RateService {
         }
         return currencyRate;
     }
+
+
+
 
 
 }

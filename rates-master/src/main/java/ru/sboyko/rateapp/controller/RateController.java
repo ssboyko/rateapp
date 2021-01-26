@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.sboyko.rateapp.dto.GifObjectApiResponse;
 import ru.sboyko.rateapp.service.GifObjectService;
 import ru.sboyko.rateapp.service.RateService;
 
@@ -24,9 +25,9 @@ public class RateController {
 
     //Проба пера получить рандомную гифку, 500ая ошибка, хз почему, дебагом пользовался, как понять где ошибка не пойму
     @GetMapping("/giphy")
-    public ArrayList<Image> getSomeGifs () throws URISyntaxException {
-        val images = gifObjectService.getSomeGIF();
-        return images;
+    public String getSomeGifs () throws URISyntaxException {
+        val image = gifObjectService.getSomeGIF("rich");
+        return "redirect:" + image;
     }
 
 
@@ -60,17 +61,15 @@ public class RateController {
        //return String.format("yesterday rate was %s", yesterdayRate.toString());
 
 
-
-
         //Это основной метод. Он не работает валится на 63 строке, которая в свою очередь ругается на 33 строку класса RateService. Хз что ей надо.
-//        Double todayRate = rateService.getRubleRateToCurrency(currency);
-//        Double yesterdayRate = rateService.getYesterdayRubleRateToCurrency(currency);
-//        if (todayRate > yesterdayRate){
-//            return String.format("USD rate to %s today = %s.Yesterday was = %s . Today rate is higher than yesterday",currency.toUpperCase(),
-//                    todayRate.toString(), yesterdayRate.toString());
-//        }
-//        else
-//            return String.format("USD rate to %s today = %s.Yesterday was = %s . Yesterday rate was higher than today",currency.toUpperCase(),
-//                    todayRate.toString(), yesterdayRate.toString());
+        Double todayRate = rateService.getRubleRateToCurrency(currency);
+        Double yesterdayRate = rateService.getYesterdayRubleRateToCurrency(currency);
+        if (todayRate > yesterdayRate){
+            return String.format("USD rate to %s today = %s.Yesterday was = %s . Today rate is higher than yesterday",currency.toUpperCase(),
+                    todayRate.toString(), yesterdayRate.toString());
+        }
+        else
+            return String.format("USD rate to %s today = %s.Yesterday was = %s . Yesterday rate was higher than today",currency.toUpperCase(),
+                    todayRate.toString(), yesterdayRate.toString());
     }
 }
